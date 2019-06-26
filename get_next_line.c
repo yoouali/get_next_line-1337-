@@ -6,7 +6,7 @@
 /*   By: yoouali <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 17:13:45 by yoouali           #+#    #+#             */
-/*   Updated: 2019/04/26 03:15:44 by yoouali          ###   ########.fr       */
+/*   Updated: 2019/06/26 14:53:34 by yoouali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ static char	*get_rest(char *tab)
 
 int			get_next_line(const int fd, char **line)
 {
-	static char	*tab[5000];
+	static char	*tab[FD_N];
 	char		buff[BUFF_SIZE + 1];
 	char		*tmp;
 	int			red;
 
-	if (fd < 0 || fd > 5000 || !line || BUFF_SIZE < 1)
+	if (fd < 0 || fd > FD_N || !line || BUFF_SIZE < 1)
 		return (-1);
 	if (!tab[fd])
 		tab[fd] = ft_strnew(1);
